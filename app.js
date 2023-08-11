@@ -1,5 +1,5 @@
 const path = require('path');
-
+require('dotenv').config()
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
@@ -12,7 +12,7 @@ const errorController = require('./controllers/error');
 const User = require('./models/user');
 
 const MONGODB_URI =
-  'urlmongodb';
+  process.env.URL_MONGODB_ATLAS;
 
 const app = express();
 const store = new MongoDBStore({
@@ -68,7 +68,7 @@ app.use(errorController.get404);
 mongoose
   .connect(MONGODB_URI)
   .then(result => {
-    app.listen(3000);
+    app.listen(process.env.SERVICE_PORT);
   })
   .catch(err => {
     console.log(err);

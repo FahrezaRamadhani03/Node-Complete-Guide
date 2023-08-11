@@ -2,6 +2,7 @@ const crypto = require('crypto');
 const bcrypt = require('bcryptjs');
 const nodemailer = require('nodemailer');
 const { validationResult } = require('express-validator');
+require('dotenv').config()
 
 const User = require('../models/user');
 
@@ -9,8 +10,8 @@ var transporter = nodemailer.createTransport({
   host: "sandbox.smtp.mailtrap.io",
   port: 2525,
   auth: {
-    user: "user",
-    pass: "pass"
+    user: process.env.MAIlTRAP_USER,
+    pass: process.env.MAILTRAP_PASS
   }
 });
 
