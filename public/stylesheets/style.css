@@ -1,0 +1,17 @@
+body {
+	padding: 50px;
+	font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+}
+
+* {
+	color: dimgrey;
+}
+
+h1 {
+	/* font-style: italic; */
+	text-decoration: underline;
+}
+
+a {
+	color: #00b7ff;
+}
